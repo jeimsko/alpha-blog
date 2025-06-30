@@ -1,0 +1,16 @@
+[
+  {
+    "id": "hello-world",
+    "title": "Hello World!",
+    "date": "2025-06-30",
+    "thumbnail": "/images/hello.jpg",
+    "file": "hello-world.md"
+  },
+  {
+    "id": "second-post",
+    "title": "두 번째 글",
+    "date": "2025-06-29",
+    "thumbnail": "/images/second.jpg",
+    "file": "second-post.md"
+  }
+]

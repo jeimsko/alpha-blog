@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>✍ 새 글 작성</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  <label>제목</label>
+  <input type="text" name="title" required>
+
+  <label>썸네일 직접 입력</label>
+  <input type="text" name="thumbnail">
+
+  <label>또는 썸네일 업로드</label>
+  <input type="file" name="thumb_file" accept="image/*">
+
+  <label>내용</label>
+  <textarea name="content" rows="10"></textarea>
+
+  <button type="submit">작성 완료</button>
+</form>
+{% endblock %}

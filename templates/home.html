@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <ul class="post-list">
+    {% for post in posts %}
+      <li class="post-item">
+        <a href="{{ url_for('post_detail', post_id=loop.index0) }}" class="post-link">
+          {% if post.thumbnail %}
+            <img src="{{ post.thumbnail }}" alt="썸네일" class="thumb-img">
+          {% endif %}
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.date }}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>새 글 작성</h2>
+  <form method="post">
+    <input type="text" id="title" name="title" placeholder="제목" required />
+    <input type="text" id="thumbnail" name="thumbnail" placeholder="썸네일 URL" />
+    <textarea id="content" name="content" placeholder="내용" required></textarea>
+    <button type="submit">저장</button>
+    <button type="button" onclick="previewPost()">미리보기</button>
+  </form>
+
+  <div id="preview-area" style="display:none;">
+    <h3 id="preview-title"></h3>
+    <img id="preview-thumbnail" style="max-width: 100%; display: none;" />
+    <div id="preview-content"></div>
+  </div>
+{% endblock %}

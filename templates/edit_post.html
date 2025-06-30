@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>✍ 새 글 작성</h2>
+<form action="{{ url_for('create_post') }}" method="POST">
+  <label>제목</label><br>
+  <input type="text" name="title" required><br><br>
+
+  <label>썸네일 이미지 주소</label><br>
+  <input type="url" name="thumbnail"><br><br>
+
+  <label>내용 (마크다운 지원)</label><br>
+  <textarea name="content" rows="15" style="width:100%;" required></textarea><br><br>
+
+  <button type="submit">✅ 글 등록</button>
+</form>
+{% endblock %}
