@@ -3,16 +3,16 @@
 {% block content %}
 <div class="cover-container">
   <h2 class="cover-title">최신 글 목록</h2>
-  <div class="post-list">
+  <ul class="post-list">
     {% for post in posts %}
-        <li class="post-item">
-            <a href="{{ url_for('post_detail', post_id=post.id) }}" class="post-link">
-            <img src="{{ post.thumbnail }}" alt="썸네일" class="thumb-img">
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.date }}</p>
-            </a>
-        </li>
+      <li class="post-item">
+        <a href="{{ url_for('post_detail', post_id=post.id) }}" class="post-link">
+          <img src="{{ post.thumbnail }}" alt="썸네일" class="thumb-img">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.date }}</p>
+        </a>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 </div>
 {% endblock %}

@@ -233,7 +233,10 @@ def cover():
     posts = load_posts()  # ← 이 함수가 posts.json에서 로딩하는지 확인
     return render_template("cover.html", posts=posts)
 
-    
+@app.route("/images/<path:filename>")
+def image(filename):
+    return send_from_directory("static/images", filename)
+
 if __name__ == "__main__":
      # 개발할 때만 사용!
     app.run(debug=True)

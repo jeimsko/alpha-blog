@@ -390,3 +390,30 @@ button[type="submit"] {
 .delete-btn:hover {
   background: #a80000;
 }
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 10px;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.post-item:hover {
+  transform: scale(1.03);
+}
+
+.thumb-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
