@@ -91,6 +91,7 @@ def index():
     posts = load_posts()
     return render_template("cover.html", posts=posts)
 
+
 @app.route("/write")
 def write():
     return render_template("post_form.html")
@@ -178,10 +179,7 @@ def edit_post(post_id):
     return render_template('form.html', post=post, edit=True, post_id=post_id)
 
 
-@app.route('/')
-def index():
-    posts = load_posts()
-    return render_template('index.html', posts=posts)
+
 
 @app.route("/robots.txt")
 def robots_txt():
