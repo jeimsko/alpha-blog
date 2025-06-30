@@ -12,6 +12,7 @@ POSTS_DIR = 'data/posts'
 
 UPLOAD_FOLDER = 'static/images'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+POSTS_JSON = os.path.join("data", "posts.json") 
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
