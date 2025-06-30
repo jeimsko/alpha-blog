@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ site_title or "나의 블로그" }}</title>
+  <meta name="description" content="{{ site_description or '개발, 일상, 정보 공유 블로그' }}">
+  <link rel="stylesheet" href="/static/style.css" />
+  <script defer src="/static/script.js"></script>
+</head>
+<body>
+  <div id="header">
+    <h1><a href="/">{{ site_title }}</a></h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">홈</a></li>
+        <li><a href="/cover">커버</a></li>
+        <li><a href="/about">소개</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu">☰</button>
+    <div class="search">
+      <input type="text" placeholder="검색어 입력" />
+      <button>검색</button>
+    </div>
+  </div>
+
+  <main id="content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>© 2025 {{ site_title }} | Powered by Alpha</p>
+    {% if adsense_code %}{{ adsense_code | safe }}{% endif %}
+  </footer>
+</body>
+</html>
+
+<script>
+function previewPost() {
+  const title = document.getElementById("title").value;
+  const thumbnail = document.getElementById("thumbnail").value;
+  const content = document.getElementById("content").value;
+
+  document.getElementById("preview-title").textContent = title;
+  document.getElementById("preview-content").innerHTML = content;
+
+  const thumbImg = document.getElementById("preview-thumbnail");
+  if (thumbnail) {
+    thumbImg.src = thumbnail;
+    thumbImg.style.display = "block";
+  } else {
+    thumbImg.style.display = "none";
+  }
+
+  document.getElementById("preview-area").style.display = "block";
+}
+</script>

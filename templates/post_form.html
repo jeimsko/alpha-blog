@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="post-form">
+  <h1>새 글 작성하기</h1>
+  <form method="POST" action="/create" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">제목</label>
+      <input type="text" id="title" name="title" placeholder="제목을 입력하세요" required>
+    </div>
+
+    <div class="form-group">
+      <label for="thumbnail">썸네일 이미지 (URL)</label>
+      <input type="url" id="thumbnail" name="thumbnail" placeholder="이미지 주소 입력">
+    </div>
+
+    <div class="form-group">
+      <label for="content">본문</label>
+      <textarea id="content" name="content" rows="12" placeholder="글 내용을 입력하세요" required></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit">저장</button>
+      <button type="button" onclick="previewPost()">미리보기</button>
+    </div>
+  </form>
+
+  <div id="preview-area" class="preview" style="display:none;">
+    <h2>미리보기</h2>
+    <h3 id="preview-title"></h3>
+    <img id="preview-thumbnail" src="" alt="" style="max-width:100%; display:none;">
+    <div id="preview-content"></div>
+  </div>
+</section>
+{% endblock %}
