@@ -114,7 +114,7 @@ def create():
     save_post(post)
     return redirect(url_for("index"))
 
-@app.route("/post/<str:post_id>")
+@app.route("/post/<string:post_id>")
 def post_detail(post_id):
     posts = load_posts()
     if 0 <= post_id < len(posts):
