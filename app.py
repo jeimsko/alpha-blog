@@ -105,4 +105,5 @@ def edit_post(post_id):
 
 
 if __name__ == "__main__":
+     # 개발할 때만 사용!
     app.run(debug=True)
